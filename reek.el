@@ -133,3 +133,4 @@ Alternatively prompt user for directory."
   :group 'reek)
 
 (provide 'reek)
+;;; reek.el ends here
