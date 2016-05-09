@@ -1,5 +1,5 @@
 * Synopsis
-A simple Emacs interface for Reek.
+An interface for the Reek ruby linter
 * Installation
 Please, note that the current version of reek.el requires [[https://github.com/troessner/reek][Reek]]
 * Manual
@@ -11,9 +11,9 @@ Just drop reek.el and dash.el. somewhere in your load-path. I favour the folder 
 * Usage
 | Command                     | Description                                   | Reek mode binding |
 |-----------------------------+-----------------------------------------------+-------------------|
-| M-x reek-check-project      | Runs Reek on the entire project               | C-c C-e p         |
-| M-x reek-check-directory    | Prompts from a directory on which to run Reek | C-c C-e d         |
-| M-x reek-check-current-file | Runs Reek on the currently visited file       | C-c C-e f         |
+| M-x reek-check-project      | Runs Reek on the entire project               | C-x R p           |
+| M-x reek-check-directory    | Prompts from a directory on which to run Reek | C-x R d           |
+| M-x reek-check-current-file | Runs Reek on the currently visited file       | C-x R f           |
 
 If you use them often you might want to enable reek-mode which will added some keybindings for them:
 #+begin_src elisp

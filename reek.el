@@ -35,7 +35,6 @@
 ;;; Code:
 
 (require 'dash)
-(require 'tramp)
 
 (defgroup reek nil
   "An Emacs interface for Reek."
@@ -46,7 +45,7 @@
   '(".projectile" ".git" ".hg" ".bzr" "_darcs" "Gemfile")
   "A list of files considered to mark the root of a project.")
 
-(defcustom reek-keymap-prefix (kbd "C-c C-e")
+(defcustom reek-keymap-prefix (kbd "C-x R")
   "Reek keymap prefix."
   :group 'reek
   :type 'string)
@@ -54,13 +53,6 @@
 (defvar reek-check-command
   "reek --single-line --no-wiki-links --sort-by smelliness"
   "The command used to run Reek checks.")
-
-(defun reek-local-file-name (file-name)
-  "Retrieve local filename if FILE-NAME is opened via TRAMP."
-  (cond ((tramp-tramp-file-p file-name)
-         (tramp-file-name-localname (tramp-dissect-file-name file-name)))
-        (t
-         file-name)))
 
 (defun reek-project-root ()
   "Retrieve the root directory of a project if available.
