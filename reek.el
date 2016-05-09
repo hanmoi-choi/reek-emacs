@@ -71,6 +71,18 @@ The current directory is assumed to be the project's root otherwise."
            (car))
       (error "You're not into a project")))
 
+(defun reek--dir-command (command &optional directory)
+  "Run COMMAND on DIRECTORY (if present).
+Alternatively prompt user for directory."
+  (reek-ensure-installed)
+  (let ((directory
+         (or directory
+             (read-directory-name "Select directory:"))))
+    (compilation-start
+     (concat command " " (reek-local-file-name directory))
+     'compilation-mode
+     (lambda (arg) (message arg) (reek-buffer-name directory)))))
+
 (defun reek-buffer-name (file-or-dir)
   "Generate a name for the Reek buffer from FILE-OR-DIR."
   (concat "*Reek " file-or-dir "*"))
