@@ -1,0 +1,4 @@
+* Synopsis
+A simple Emacs interface for Reek.
+* Acknowledgment
+Majority part of code is from https://github.com/bbatsov/rubocop-emacs
