@@ -1,4 +1,28 @@
 * Synopsis
 A simple Emacs interface for Reek.
-* Acknowledgment
-Majority part of code is from https://github.com/bbatsov/rubocop-emacs
+* Installation
+Please, note that the current version of RuboCop.el requires [[https://github.com/troessner/reek][Reek]]
+* Manual
+Just drop rubocop.el and dash.el. somewhere in your load-path. I favour the folder ~/.emacs.d/vendor:
+#+begin_src elisp
+  (add-to-list 'load-path "~/.emacs.d/vendor")
+  (require 'rubocop)
+#+end_src
+* Usage
+| Command                        | Description                                      | Reek mode binding |
+|--------------------------------+--------------------------------------------------+-------------------|
+| M-x rubocop-check-project      | Runs RuboCop on the entire project               | C-c C-e p         |
+| M-x rubocop-check-directory    | Prompts from a directory on which to run RuboCop | C-c C-e d         |
+| M-x rubocop-check-current-file | Runs RuboCop on the currently visited file       | C-c C-e f         |
+
+If you use them often you might want to enable rubocop-mode which will added some keybindings for them:
+#+begin_src elisp
+  (add-hook 'ruby-mode-hook #'rubocop-mode)
+#+end_src
+* Credit
+Majority part of code is from [[https://github.com/bbatsov/rubocop-emacs][RuboCop Emacs]]
+* Bugs & Improvements
+Bug reports and suggestions for improvements are always welcome. GitHub pull requests are even better! :-)
+
+Cheers,
+Daniel
