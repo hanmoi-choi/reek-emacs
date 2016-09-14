@@ -63,6 +63,8 @@ The current directory is assumed to be the project's root otherwise."
            (car))
       (error "You're not into a project")))
 
+(defalias 'reek-local-file-name #'identity)
+
 (defun reek--dir-command (command &optional directory)
   "Run COMMAND on DIRECTORY (if present).
 Alternatively prompt user for directory."
